@@ -1,0 +1,14 @@
+org.example
+├── bios/          # POST, инициализация RAM, передача управления на bootloader
+├── bootloader/    # Чтение образа ядра, передача параметров аргументов ядра
+├── hardware/      # Эмуляция железа (CPU cores, RAM array, Timer, Bus)
+├── kernel/        # Пространство ядра (Kernel Space)
+│   ├── memory/    # MMU, Paging, Page Table Manager, Allocator
+│   ├── process/   # PCB, Context Switcher, Scheduler (Round-Robin/Priority)
+│   ├── fs/        # Virtual File System (VFS), Inodes, File Descriptors
+│   ├── sync/      # Mutex, Semaphore, Spinlock (реализованные поверх ядра)
+│   └── syscall/   # Syscall Handler (read, write, fork, yield, exec)
+├── userspace/     # Пользовательское пространство (User Space)
+│   ├── init/      # PID 1 (системный менеджер/инициализатор)
+│   └── apps/      # Мини-приложения (shell, echo, cat)
+└── Main
