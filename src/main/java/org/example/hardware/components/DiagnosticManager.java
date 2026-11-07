@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface DiagnosticManager {
     List<ComponentResult> testResults();
+    Timer getTimer();
 }

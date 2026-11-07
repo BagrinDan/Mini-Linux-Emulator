@@ -1,9 +1,7 @@
 package org.example.bios;
 
-import org.example.bootloader.Bootloader;
 import org.example.hardware.ComponentResult;
 import org.example.hardware.components.DiagnosticManager;
-import org.example.hardware.components.Hardware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +25,7 @@ public class Bios {
         }
 
         // Check for bootloader
+
 
         return true;
     }

@@ -10,6 +10,7 @@ public class Motherboard extends Hardware implements DiagnosticManager{
     private final CPU cpu;
     private final RAM ram;
     private final HardStorage hardStorage;
+    private final Timer timer;
 
     public Motherboard(){
         this.hardwareName = "AssRock";
@@ -18,6 +19,7 @@ public class Motherboard extends Hardware implements DiagnosticManager{
         this.cpu = new CPU();
         this.ram = new RAM();
         this.hardStorage = new HardStorage();
+        this.timer = new Timer("System Timer", 100);
     }
 
     @Override
@@ -35,6 +37,7 @@ public class Motherboard extends Hardware implements DiagnosticManager{
 
     @Override
     public List<ComponentResult> testResults() {
+
         List<ComponentResult> resultsList = new ArrayList<>();
 
         List<Hardware> components = List.of(this, cpu, hardStorage, ram);
@@ -55,5 +58,9 @@ public class Motherboard extends Hardware implements DiagnosticManager{
         }
 
         return resultsList;
+    }
+
+    public Timer getTimer(){
+        return timer;
     }
 }
